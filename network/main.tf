@@ -50,7 +50,7 @@ resource "aws_eip" "elastic_ip" {
 
 resource "aws_nat_gateway" "ninja_nat" {
   allocation_id = aws_eip.elastic_ip.id
-  sdubnet_id     = aws_subnet.public_subnets[0].id
+  subnet_id     = aws_subnet.public_subnets[0].id
   tags = {
     Name = var.nat_name
   }
